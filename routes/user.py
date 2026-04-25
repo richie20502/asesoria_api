@@ -1,6 +1,7 @@
 from flask import Blueprint, request, jsonify, current_app
 from models.user import User
 
+
 user_bp = Blueprint('user', __name__, url_prefix='/users')
 
 
@@ -13,7 +14,7 @@ def create_user():
         email=data['email'],
         password=data['password']  # luego encriptamos
     )
-    db = current_app.extensions['sqlalchemy'].db
+    db = current_app.extensions['sqlalchemy']
 
     db.session.add(user)
     db.session.commit()
