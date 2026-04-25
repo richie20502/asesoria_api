@@ -1,6 +1,6 @@
 import os 
 class  Config:
-    SQLALCHEMY_DATABASE = os.getenv(
+    SQLALCHEMY_DATABASE_URI = os.getenv(
         "DATABASE_URL",
         "mysql+pymysql://root:@localhost/users_db"
         );
